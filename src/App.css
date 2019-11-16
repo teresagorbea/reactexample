@@ -20,3 +20,75 @@
 .App-link {
   color: #09d3ac;
 }
+.App{
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+  "header header header"
+  "contenido contenido sidebar"
+  "widget-1 widget-2 sidebar"
+  "footer footer footer";
+}
+.header{
+  grid-area: header;
+}
+.sidebar{
+  grid-area: sidebar;
+}
+.contenido{
+  grid-area: contenido;
+}
+.widget-1{
+  grid-area: widget-1;
+}
+.widget-2{
+  grid-area: widget-2;
+}
+.footer{
+  grid-area: footer;
+}
+.header,
+.contenido,
+.sidebar,
+.widget-1,
+.widget-2,
+.footer{
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+body{
+  background: #cfffeb;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 768px){
+
+  .App{
+    grid-template-areas:
+  "header header header"
+  "contenido contenido contenido"
+  "sidebar sidebar sidebar"
+  "widget-1 widget-2 widget-2"
+  "footer footer footer";
+  }
+}
+
+@media screen and (max-width: 375px){
+
+  .App{
+    grid-template-areas:
+  "header header header"
+  "contenido contenido contenido"
+  "sidebar sidebar sidebar"
+  "widget-1 widget-1 widget-1"
+  "widget-2 widget-2 widget-2"
+  "footer footer footer";
+  }
+}
